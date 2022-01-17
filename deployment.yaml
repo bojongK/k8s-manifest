@@ -1,0 +1,23 @@
+# deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      imagePullSecrets:
+        - name: {k8s 내에서 생성한 secret 명, dockerhub 내 private repository에 접근하기 위함.}
+      containers:
+        - name: my-app
+          image: {Dockerhub 계정명}/my-app:{Jenkins build number}
+          ports:
+            - containerPort: 8080
