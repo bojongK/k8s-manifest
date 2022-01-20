@@ -14,10 +14,8 @@ spec:
       labels:
         app: my-app
     spec:
-      imagePullSecrets:
-        - name: {k8s 내에서 생성한 secret 명, dockerhub 내 private repository에 접근하기 위함.}
       containers:
         - name: my-app
-          image: {Dockerhub 계정명}/my-app:{Jenkins build number}
+          image: nginx:latest
           ports:
             - containerPort: 8080
