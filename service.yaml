@@ -1,16 +1,10 @@
-# service.yaml
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app
-  labels:
-    app: my-app
+  name: guestbook-ui
 spec:
-  type: ClusterIP
-  selector:
-    app: my-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
+  - port: 80
+    targetPort: 80
+  selector:
+    app: guestbook-ui

@@ -1,23 +1,20 @@
-# deployment.yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: guestbook-ui
 spec:
+  replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: my-app
-  replicas: 2
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        app: my-app
+        app: guestbook-ui
     spec:
-      imagePullSecrets:
-        - name: {k8s 내에서 생성한 secret 명, dockerhub 내 private repository에 접근하기 위함.}
       containers:
-        - name: my-app
-          image: {Dockerhub 계정명}/my-app:{Jenkins build number}
-          ports:
-            - containerPort: 8080
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
+        ports:
+        - containerPort: 80
