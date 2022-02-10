@@ -6,11 +6,11 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      run: dev
+      env: dev
   template:
     metadata:
       labels:
-        run: dev
+        env: dev
     spec:
       containers:
       - image: sulmoon/api-gateway:tag
