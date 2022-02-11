@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,12 +18,54 @@ spec:
         name: auth-svc
         ports:
         - containerPort: 9090
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sulmoon
+  template:
+    metadata:
+      labels:
+        run: sulmoon
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sulmoon
+  template:
+    metadata:
+      labels:
+        run: sulmoon
     spec:
       containers:
       - image: sulmoon/survey-svc:160
         name: survey-svc
         ports:
         - containerPort: 9092
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sulmoon
+  template:
+    metadata:
+      labels:
+        run: sulmoon
     spec:
       containers:
       - image: sulmoon/user-svc:160
@@ -51,6 +94,20 @@ spec:
         - containerPort: 80
       nodeSelector:
         node: svc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon-api-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sulmoon
+  template:
+    metadata:
+      labels:
+        run: sulmoon
     spec:
       containers:
       - image: sulmoon/discovery-svc:160
