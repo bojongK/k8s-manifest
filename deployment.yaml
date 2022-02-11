@@ -17,11 +17,13 @@ spec:
         name: auth-svc
         ports:
         - containerPort: 9090
+    spec:
       containers:
       - image: sulmoon/survey-svc:154
         name: survey-svc
         ports:
         - containerPort: 9092
+    spec:
       containers:
       - image: sulmoon/user-svc:154
         name: user-svc
@@ -49,7 +51,7 @@ spec:
         - containerPort: 80
       nodeSelector:
         node: svc
-
+    spec:
       containers:
       - image: sulmoon/discovery-svc:154
         name: discovery-svc
