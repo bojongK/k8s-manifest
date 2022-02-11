@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sulmoon
+  name: sulmoon-auth
 spec:
   replicas: 1
   selector:
@@ -22,7 +22,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sulmoon
+  name: sulmoon-survey
 spec:
   replicas: 1
   selector:
@@ -42,7 +42,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sulmoon
+  name: sulmoon-user
 spec:
   replicas: 1
   selector:
@@ -62,7 +62,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sulmoon-api-svc
+  name: sulmoon-api-gateway
 spec:
   replicas: 1
   selector:
@@ -84,7 +84,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sulmoon-api-svc
+  name: sulmoon-discovery
 spec:
   replicas: 1
   selector:
