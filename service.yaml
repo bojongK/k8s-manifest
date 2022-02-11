@@ -7,7 +7,6 @@ spec:
   - port: 80
     protocol: TCP
     targetPort: 8080
-    nodePort: 10000
   type: NodePort
   selector:
     run: sulmoon
