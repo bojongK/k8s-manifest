@@ -13,19 +13,19 @@ spec:
         run: sulmoon
     spec:
       containers:
-      - image: sulmoon/auth-svc:154
+      - image: sulmoon/auth-svc:155
         name: auth-svc
         ports:
         - containerPort: 9090
     spec:
       containers:
-      - image: sulmoon/survey-svc:154
+      - image: sulmoon/survey-svc:155
         name: survey-svc
         ports:
         - containerPort: 9092
     spec:
       containers:
-      - image: sulmoon/user-svc:154
+      - image: sulmoon/user-svc:155
         name: user-svc
         ports:
         - containerPort: 9093
@@ -45,7 +45,7 @@ spec:
         run: sulmoon
     spec:
       containers:
-      - image: sulmoon/api-gateway-svc:154
+      - image: sulmoon/api-gateway-svc:155
         name: api-gateway
         ports:
         - containerPort: 80
@@ -53,7 +53,7 @@ spec:
         node: svc
     spec:
       containers:
-      - image: sulmoon/discovery-svc:154
+      - image: sulmoon/discovery-svc:155
         name: discovery-svc
         ports:
         - containerPort: 9091
