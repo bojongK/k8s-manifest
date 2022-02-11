@@ -13,20 +13,10 @@ spec:
         run: sulmoon
     spec:
       containers:
-      - image: sulmoon/api-gateway-svc:tag
-        name: api-gateway
-        ports:
-        - containerPort: 80
-      containers:
       - image: sulmoon/auth-svc:tag
         name: auth-svc
         ports:
         - containerPort: 9090
-      containers:
-      - image: sulmoon/discovery-svc:tag
-        name: discovery-svc
-        ports:
-        - containerPort: 9091
       containers:
       - image: sulmoon/survey-svc:tag
         name: survey-svc
@@ -37,3 +27,33 @@ spec:
         name: user-svc
         ports:
         - containerPort: 9093
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sulmoon
+  template:
+    metadata:
+      labels:
+        run: sulmoon
+    spec:
+      containers:
+      - image: sulmoon/api-gateway-svc:tag
+        name: api-gateway
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        node: svc
+
+      containers:
+      - image: sulmoon/discovery-svc:tag
+        name: discovery-svc
+        ports:
+        - containerPort: 9091
+      nodeSelector:
+        node: svc
