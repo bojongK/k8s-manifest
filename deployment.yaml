@@ -32,20 +32,6 @@ spec:
     metadata:
       labels:
         run: sulmoon
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: sulmoon
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      run: sulmoon
-  template:
-    metadata:
-      labels:
-        run: sulmoon
     spec:
       containers:
       - image: sulmoon/survey-svc:160
