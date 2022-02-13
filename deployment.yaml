@@ -16,8 +16,6 @@ spec:
       containers:
       - image: sulmoon/auth-svc:160
         name: auth-svc
-        ports:
-        - containerPort: 9090
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,8 +34,6 @@ spec:
       containers:
       - image: sulmoon/survey-svc:160
         name: survey-svc
-        ports:
-        - containerPort: 9092
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -56,8 +52,6 @@ spec:
       containers:
       - image: sulmoon/user-svc:160
         name: user-svc
-        ports:
-        - containerPort: 9093
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -99,6 +93,6 @@ spec:
       - image: sulmoon/discovery-svc:160
         name: discovery-svc
         ports:
-        - containerPort: 9091
+        - containerPort: 8761
       nodeSelector:
         node: svc
