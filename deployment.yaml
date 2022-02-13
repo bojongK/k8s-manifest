@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sulmoon
+      app: sulmoon
   template:
     metadata:
       labels:
-        run: sulmoon
+        app: sulmoon
     spec:
       containers:
       - image: sulmoon/auth-svc:160
@@ -27,11 +27,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sulmoon
+      app: sulmoon
   template:
     metadata:
       labels:
-        run: sulmoon
+        app: sulmoon
     spec:
       containers:
       - image: sulmoon/survey-svc:160
@@ -47,11 +47,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sulmoon
+      app: sulmoon
   template:
     metadata:
       labels:
-        run: sulmoon
+        app: sulmoon
     spec:
       containers:
       - image: sulmoon/user-svc:160
@@ -67,17 +67,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sulmoon
+      app: sulmoon-gate
   template:
     metadata:
       labels:
-        run: sulmoon
+        app: sulmoon-gate
     spec:
       containers:
       - image: sulmoon/api-gateway-svc:160
         name: api-gateway
         ports:
-        - containerPort: 80
+        - containerPort: 10000
       nodeSelector:
         node: svc
 ---
@@ -89,11 +89,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sulmoon
+      app: sulmoon
   template:
     metadata:
       labels:
-        run: sulmoon
+        app: sulmoon
     spec:
       containers:
       - image: sulmoon/discovery-svc:160
