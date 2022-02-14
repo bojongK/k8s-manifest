@@ -18,7 +18,7 @@ spec:
       - image: sulmoon/auth-svc:162
         name: auth-svc
         volumeMounts:
-        - name: aws-secrets
+        - name: secrets-store-inline
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
@@ -48,7 +48,7 @@ spec:
       - image: sulmoon/survey-svc:162
         name: survey-svc
         volumeMounts:
-        - name: aws-secrets
+        - name: secrets-store-inline
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
@@ -78,7 +78,7 @@ spec:
       - image: sulmoon/user-svc:162
         name: user-svc
         volumeMounts:
-        - name: aws-secrets
+        - name: secrets-store-inline
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
