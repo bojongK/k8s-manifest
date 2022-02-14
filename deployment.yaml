@@ -18,7 +18,7 @@ spec:
         name: auth-svc
         volumeMounts:
         - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
+          mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
@@ -48,7 +48,7 @@ spec:
         name: survey-svc
         volumeMounts:
         - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
+          mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
@@ -78,7 +78,7 @@ spec:
         name: user-svc
         volumeMounts:
         - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
+          mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
