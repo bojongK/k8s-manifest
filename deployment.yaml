@@ -18,11 +18,11 @@ spec:
       - image: sulmoon/auth-svc:162
         name: auth-svc
         volumeMounts:
-        - name: secret-goormprj
+        - name: aws-secrets
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: secret-goormprj
+      - name: aws-secrets
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -48,11 +48,11 @@ spec:
       - image: sulmoon/survey-svc:162
         name: survey-svc
         volumeMounts:
-        - name: secret-goormprj
+        - name: aws-secrets
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: secret-goormprj
+      - name: aws-secrets
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -78,11 +78,11 @@ spec:
       - image: sulmoon/user-svc:162
         name: user-svc
         volumeMounts:
-        - name: secret-goormprj
+        - name: aws-secrets
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: secret-goormprj
+      - name: aws-secrets
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
