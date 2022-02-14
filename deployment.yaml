@@ -21,12 +21,12 @@ spec:
           mountPath: "/mnt/secrets-store"
           readOnly: true
       volumes:
-        - name: mysecret2
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: "aws-secrets"
+      - name: mysecret2
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -45,17 +45,17 @@ spec:
       containers:
       - image: sulmoon/survey-svc:160
         name: survey-svc
-       volumeMounts:
-       - name: mysecret2
+        volumeMounts:
+        - name: mysecret2
           mountPath: "/mnt/secrets-store"
           readOnly: true
       volumes:
-        - name: mysecret2
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: "aws-secrets"
+      - name: mysecret2
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -79,12 +79,12 @@ spec:
           mountPath: "/mnt/secrets-store"
           readOnly: true
       volumes:
-        - name: mysecret2
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: "aws-secrets"
+      - name: mysecret2
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
