@@ -13,6 +13,7 @@ spec:
       labels:
         app: sulmoon
     spec:
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/auth-svc:160
         name: auth-svc
@@ -42,6 +43,7 @@ spec:
       labels:
         app: sulmoon
     spec:
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/survey-svc:160
         name: survey-svc
@@ -71,6 +73,7 @@ spec:
       labels:
         app: sulmoon
     spec:
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/user-svc:160
         name: user-svc
