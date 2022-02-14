@@ -22,7 +22,7 @@ spec:
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: aws-secrets
+      - name: secrets-store-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -52,7 +52,7 @@ spec:
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: aws-secrets
+      - name: secrets-store-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -82,7 +82,7 @@ spec:
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: aws-secrets
+      - name: secrets-store-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
