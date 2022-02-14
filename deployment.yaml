@@ -16,18 +16,7 @@ spec:
       containers:
       - image: sulmoon/auth-svc:176
         name: auth-svc
-        volumeMounts:
-        - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
-          readOnly: true
       serviceAccountName: sulmoon-deployment-sa
-      volumes:
-      - name: secrets-store-inline
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: "sulmoon-secret-provider"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -46,18 +35,7 @@ spec:
       containers:
       - image: sulmoon/survey-svc:176
         name: survey-svc
-        volumeMounts:
-        - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
-          readOnly: true
       serviceAccountName: sulmoon-deployment-sa
-      volumes:
-      - name: secrets-store-inline
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: "sulmoon-secret-provider"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -76,18 +54,7 @@ spec:
       containers:
       - image: sulmoon/user-svc:176
         name: user-svc
-        volumeMounts:
-        - name: secrets-store-inline
-          mountPath: "/secret/goormprj"
-          readOnly: true
       serviceAccountName: sulmoon-deployment-sa
-      volumes:
-      - name: secrets-store-inline
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: "sulmoon-secret-provider"
 ---
 apiVersion: apps/v1
 kind: Deployment
