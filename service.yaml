@@ -22,8 +22,8 @@ metadata:
     app: sulmoon
 spec:
   ports:
-  - port: 0
+  - port: 80
     protocol: TCP
-    targetPort: 0
+    targetPort: 80
   selector:
     app: sulmoon
