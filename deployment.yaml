@@ -16,17 +16,17 @@ spec:
       containers:
       - image: sulmoon/auth-svc:160
         name: auth-svc
-      volumeMounts:
-     - name: mysecret2
-        mountPath: "/mnt/secrets-store"
-        readOnly: true
-    volumes:
-      - name: mysecret2
-        csi:
-          driver: secrets-store.csi.k8s.io
+        volumeMounts:
+        - name: mysecret2
+          mountPath: "/mnt/secrets-store"
           readOnly: true
-          volumeAttributes:
-            secretProviderClass: "aws-secrets"
+      volumes:
+        - name: mysecret2
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -45,17 +45,17 @@ spec:
       containers:
       - image: sulmoon/survey-svc:160
         name: survey-svc
-      volumeMounts:
-     - name: mysecret2
-        mountPath: "/mnt/secrets-store"
-        readOnly: true
-    volumes:
-      - name: mysecret2
-        csi:
-          driver: secrets-store.csi.k8s.io
+       volumeMounts:
+       - name: mysecret2
+          mountPath: "/mnt/secrets-store"
           readOnly: true
-          volumeAttributes:
-            secretProviderClass: "aws-secrets"
+      volumes:
+        - name: mysecret2
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -74,17 +74,17 @@ spec:
       containers:
       - image: sulmoon/user-svc:160
         name: user-svc
-      volumeMounts:
-     - name: mysecret2
-        mountPath: "/mnt/secrets-store"
-        readOnly: true
-    volumes:
-      - name: mysecret2
-        csi:
-          driver: secrets-store.csi.k8s.io
+        volumeMounts:
+        - name: mysecret2
+          mountPath: "/mnt/secrets-store"
           readOnly: true
-          volumeAttributes:
-            secretProviderClass: "aws-secrets"
+      volumes:
+        - name: mysecret2
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
