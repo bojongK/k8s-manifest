@@ -13,7 +13,7 @@ spec:
       labels:
         app: sulmoon
     spec:
-      serviceAccountName: goormprj
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/auth-svc:176
         name: auth-svc
@@ -27,7 +27,7 @@ spec:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "goormprj"
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -43,7 +43,7 @@ spec:
       labels:
         app: sulmoon
     spec:
-      serviceAccountName: goormprj
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/survey-svc:176
         name: survey-svc
@@ -57,7 +57,7 @@ spec:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "goormprj"
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -73,7 +73,7 @@ spec:
       labels:
         app: sulmoon
     spec:
-      serviceAccountName: goormprj
+      serviceAccountName: aws-secrets
       containers:
       - image: sulmoon/user-svc:176
         name: user-svc
@@ -87,7 +87,7 @@ spec:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "goormprj"
+            secretProviderClass: "aws-secrets"
 ---
 apiVersion: apps/v1
 kind: Deployment
