@@ -64,13 +64,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sulmoon-gate
-      app: sulmoon
+    - app: sulmoon-gate
+    - app: sulmoon
   template:
     metadata:
       labels:
-        app: sulmoon-gate
-        app: sulmoon
+      - app: sulmoon-gate
+      - app: sulmoon
     spec:
       containers:
       - image: sulmoon/api-gateway-svc:176
