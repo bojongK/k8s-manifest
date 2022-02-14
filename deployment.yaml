@@ -15,7 +15,7 @@ spec:
     spec:
       serviceAccountName: aws-secrets
       containers:
-      - image: sulmoon/auth-svc:172
+      - image: sulmoon/auth-svc:173
         name: auth-svc
         volumeMounts:
         - name: secrets-store-inline
@@ -45,7 +45,7 @@ spec:
     spec:
       serviceAccountName: aws-secrets
       containers:
-      - image: sulmoon/survey-svc:172
+      - image: sulmoon/survey-svc:173
         name: survey-svc
         volumeMounts:
         - name: secrets-store-inline
@@ -75,7 +75,7 @@ spec:
     spec:
       serviceAccountName: aws-secrets
       containers:
-      - image: sulmoon/user-svc:172
+      - image: sulmoon/user-svc:173
         name: user-svc
         volumeMounts:
         - name: secrets-store-inline
@@ -104,7 +104,7 @@ spec:
         app: sulmoon-gate
     spec:
       containers:
-      - image: sulmoon/api-gateway-svc:172
+      - image: sulmoon/api-gateway-svc:173
         name: api-gateway
         ports:
         - containerPort: 10000
@@ -126,7 +126,7 @@ spec:
         app: sulmoon
     spec:
       containers:
-      - image: sulmoon/discovery-svc:172
+      - image: sulmoon/discovery-svc:173
         name: discovery-svc
         ports:
         - containerPort: 8761
