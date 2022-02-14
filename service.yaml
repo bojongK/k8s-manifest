@@ -5,6 +5,7 @@ metadata:
   labels: 
     app: sulmoon-gate
 spec:
+  clusterIP: 10.100.75.225
   ports:
   - port: 10000
     protocol: TCP
