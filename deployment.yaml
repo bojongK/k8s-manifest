@@ -65,10 +65,12 @@ spec:
   selector:
     matchLabels:
       app: sulmoon-gate
+      app: sulmoon
   template:
     metadata:
       labels:
         app: sulmoon-gate
+        app: sulmoon
     spec:
       containers:
       - image: sulmoon/api-gateway-svc:176
