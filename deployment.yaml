@@ -18,7 +18,7 @@ spec:
       - image: sulmoon/auth-svc:160
         name: auth-svc
         volumeMounts:
-        - name: /secret/goormprj
+        - name: secret-goormprj
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
@@ -48,7 +48,7 @@ spec:
       - image: sulmoon/survey-svc:160
         name: survey-svc
         volumeMounts:
-        - name: /secret/goormprj
+        - name: secret-goormprj
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
@@ -78,7 +78,7 @@ spec:
       - image: sulmoon/user-svc:160
         name: user-svc
         volumeMounts:
-        - name: /secret/goormprj
+        - name: secret-goormprj
           mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
