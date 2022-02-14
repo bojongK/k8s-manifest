@@ -12,3 +12,17 @@ spec:
   type: LoadBalancer
   selector:
     app: sulmoon-gate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sulmoon-service
+  labels: 
+    app: sulmoon
+spec:
+  ports:
+  - port: 0
+    protocol: TCP
+    targetPort: 0
+  selector:
+    app: sulmoon
