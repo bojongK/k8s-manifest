@@ -9,7 +9,6 @@ spec:
   - port: 10000
     protocol: TCP
     targetPort: 10000
-    nodePort: 10000
   type: LoadBalancer
   selector:
     app: sulmoon-gate
