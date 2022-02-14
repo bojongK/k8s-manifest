@@ -17,11 +17,11 @@ spec:
       - image: sulmoon/auth-svc:160
         name: auth-svc
         volumeMounts:
-        - name: mysecret2
-          mountPath: "/mnt/secrets-store"
+        - name: /secret/goormprj
+          mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: mysecret2
+      - name: /secret/goormprj
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -46,11 +46,11 @@ spec:
       - image: sulmoon/survey-svc:160
         name: survey-svc
         volumeMounts:
-        - name: mysecret2
-          mountPath: "/mnt/secrets-store"
+        - name: /secret/goormprj
+          mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: mysecret2
+      - name: /secret/goormprj
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -75,11 +75,11 @@ spec:
       - image: sulmoon/user-svc:160
         name: user-svc
         volumeMounts:
-        - name: mysecret2
-          mountPath: "/mnt/secrets-store"
+        - name: /secret/goormprj
+          mountPath: "/secret/goormprj"
           readOnly: true
       volumes:
-      - name: mysecret2
+      - name: /secret/goormprj
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
