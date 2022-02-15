@@ -29,11 +29,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sulmoon
+      app: sulmoon-dis
   template:
     metadata:
       labels:
-        app: sulmoon
+        app: sulmoon-dis
     spec:
       containers:
       - image: sulmoon/discovery-svc:179
