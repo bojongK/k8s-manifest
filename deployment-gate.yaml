@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sulmoon-gate
+  template:
+    metadata:
+      labels:
+        app: sulmoon-gate
+    spec:
+      containers:
+      - image: sulmoon/api-gateway-svc:179
+        name: api-gateway
+        ports:
+        - containerPort: 10000
+      nodeSelector:
+        node: svc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sulmoon-discovery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sulmoon
+  template:
+    metadata:
+      labels:
+        app: sulmoon
+    spec:
+      containers:
+      - image: sulmoon/discovery-svc:179
+        name: discovery-svc
+        ports:
+        - containerPort: 8761
+      nodeSelector:
+        node: svc
