@@ -17,11 +17,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sulmoon-dis
+  name: sulmoon-dis-svc
   labels: 
     app: sulmoon-dis
 spec:
-  clusterIP: 10.100.75.226
+  clusterIP: 10.100.75.235
   ports:
   - port: 8761
     protocol: TCP
