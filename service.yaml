@@ -4,7 +4,7 @@ metadata:
   name: sulmoon-svc
   labels: 
     app: sulmoon-gate
-    dis: sulmoon
+    run: sulmoon
 spec:
   clusterIP: 10.100.75.225
   ports:
