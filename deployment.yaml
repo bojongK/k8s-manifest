@@ -14,7 +14,7 @@ spec:
         app: sulmoon
     spec:
       containers:
-      - image: sulmoon/auth-svc:176
+      - image: sulmoon/auth-svc:179
         name: auth-svc
       serviceAccountName: sulmoon-deployment-sa
 ---
@@ -33,7 +33,7 @@ spec:
         app: sulmoon
     spec:
       containers:
-      - image: sulmoon/survey-svc:176
+      - image: sulmoon/survey-svc:179
         name: survey-svc
       serviceAccountName: sulmoon-deployment-sa
 ---
@@ -52,7 +52,7 @@ spec:
         app: sulmoon
     spec:
       containers:
-      - image: sulmoon/user-svc:176
+      - image: sulmoon/user-svc:179
         name: user-svc
       serviceAccountName: sulmoon-deployment-sa
 ---
@@ -71,7 +71,7 @@ spec:
         app: sulmoon-gate
     spec:
       containers:
-      - image: sulmoon/api-gateway-svc:176
+      - image: sulmoon/api-gateway-svc:179
         name: api-gateway
         ports:
         - containerPort: 10000
@@ -93,7 +93,7 @@ spec:
         app: sulmoon-dis
     spec:
       containers:
-      - image: sulmoon/discovery-svc:176
+      - image: sulmoon/discovery-svc:179
         name: discovery-svc
         ports:
         - containerPort: 8761
