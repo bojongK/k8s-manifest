@@ -20,12 +20,12 @@ spec:
         - "/bin/sleep"
         - "60"
         volumeMounts:
-        - name: secrets-store-inline
+        - name: secrets-store01-inline
           mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
-      - name: secrets-store-inline
+      - name: secrets-store01-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -49,13 +49,16 @@ spec:
       containers:
       - image: sulmoon/survey-svc:176
         name: survey-svc
+        command:
+        - "/bin/sleep"
+        - "60"
         volumeMounts:
-        - name: secrets-store-inline
+        - name: secrets-store02-inline
           mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
-      - name: secrets-store-inline
+      - name: secrets-store02-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
@@ -79,13 +82,16 @@ spec:
       containers:
       - image: sulmoon/user-svc:176
         name: user-svc
+        command:
+        - "/bin/sleep"
+        - "60"
         volumeMounts:
-        - name: secrets-store-inline
+        - name: secrets-store03-inline
           mountPath: "/mnt/secrets-store"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
-      - name: secrets-store-inline
+      - name: secrets-store03-inline
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
