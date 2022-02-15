@@ -21,7 +21,7 @@ metadata:
   labels: 
     app: sulmoon-dis
 spec:
-  clusterIP: 10.100.75.225
+  clusterIP: 10.100.75.226
   ports:
   - port: 8761
     protocol: TCP
