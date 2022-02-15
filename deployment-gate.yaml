@@ -27,6 +27,9 @@ metadata:
   name: sulmoon-discovery
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: sulmoon-gate
   template:
     metadata:
       labels:
