@@ -16,6 +16,9 @@ spec:
       containers:
       - image: sulmoon/auth-svc:176
         name: auth-svc
+        command:
+        - "/bin/sleep"
+        - "60"
         volumeMounts:
         - name: secrets-store-inline
           mountPath: "/mnt/secrets-store"
