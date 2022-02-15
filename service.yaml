@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sulmoon-svc
+  name: sulmoon-dis
   labels: 
     app: sulmoon-dis
 spec:
