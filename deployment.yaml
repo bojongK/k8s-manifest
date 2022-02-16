@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
       - image: sulmoon/auth-svc:176
-          name: auth-svc
+        name: auth-svc
         envFrom:
         - configMapRef:
-          name: appconfig
+            name: appconfig
         volumeMounts:
         - name: secrets-store01-inline
           mountPath: "/mnt/secrets-store"
