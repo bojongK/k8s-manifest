@@ -16,9 +16,9 @@ spec:
       containers:
       - image: sulmoon/auth-svc:176
         name: auth-svc
-        command:
-        - "/bin/sleep"
-        - "60"
+        envFrom:
+        - configMapRef:
+          name: appconfig
         volumeMounts:
         - name: secrets-store01-inline
           mountPath: "/mnt/secrets-store"
@@ -49,9 +49,9 @@ spec:
       containers:
       - image: sulmoon/survey-svc:176
         name: survey-svc
-        command:
-        - "/bin/sleep"
-        - "60"
+        envFrom:
+        - configMapRef:
+          name: appconfig
         volumeMounts:
         - name: secrets-store02-inline
           mountPath: "/mnt/secrets-store"
@@ -82,9 +82,9 @@ spec:
       containers:
       - image: sulmoon/user-svc:176
         name: user-svc
-        command:
-        - "/bin/sleep"
-        - "60"
+        envFrom:
+        - configMapRef:
+          name: appconfig
         volumeMounts:
         - name: secrets-store03-inline
           mountPath: "/mnt/secrets-store"
