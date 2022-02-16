@@ -1,9 +1,10 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: sulmoon-auth
 spec:
+  serviceName: auth
   replicas: 1
   selector:
     matchLabels:
@@ -33,10 +34,11 @@ spec:
             secretProviderClass: "sulmoon-secret-provider"
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: sulmoon-survey
 spec:
+  serviceName: survey
   replicas: 1
   selector:
     matchLabels:
@@ -66,10 +68,11 @@ spec:
             secretProviderClass: "sulmoon-secret-provider"
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: sulmoon-user
 spec:
+  serviceName: user
   replicas: 1
   selector:
     matchLabels:
