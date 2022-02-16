@@ -21,12 +21,11 @@ metadata:
   labels: 
     app: sulmoon-dis
 spec:
-  clusterIP: 10.100.75.235
+  clusterIP: None
   ports:
   - port: 8761
     protocol: TCP
     targetPort: 8761
-  type: LoadBalancer
   selector:
     app: sulmoon-dis
 ---
