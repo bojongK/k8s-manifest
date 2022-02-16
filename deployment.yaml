@@ -21,7 +21,7 @@ spec:
             name: appconfig
         volumeMounts:
         - name: secrets-store01-inline
-          mountPath: "/mnt/secrets-store"
+          mountPath: "/secret/"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
@@ -54,7 +54,7 @@ spec:
             name: appconfig
         volumeMounts:
         - name: secrets-store02-inline
-          mountPath: "/mnt/secrets-store"
+          mountPath: "/secret/"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
@@ -87,7 +87,7 @@ spec:
             name: appconfig
         volumeMounts:
         - name: secrets-store03-inline
-          mountPath: "/mnt/secrets-store"
+          mountPath: "/secret/"
           readOnly: true
       serviceAccountName: sulmoon-deployment-sa
       volumes:
