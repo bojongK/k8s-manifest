@@ -13,6 +13,7 @@ spec:
       labels:
         app: sulmoon
     spec:
+      hostname: sulmoon-auth-0.default.svc.cluster.local
       containers:
       - image: sulmoon/auth-svc:192
         name: auth-svc
