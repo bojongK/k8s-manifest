@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - image: sulmoon/auth-svc:176
-        name: auth-svc
+          name: auth-svc
         envFrom:
         - configMapRef:
           name: appconfig
@@ -51,7 +51,7 @@ spec:
         name: survey-svc
         envFrom:
         - configMapRef:
-          name: appconfig
+            name: appconfig
         volumeMounts:
         - name: secrets-store02-inline
           mountPath: "/mnt/secrets-store"
@@ -84,7 +84,7 @@ spec:
         name: user-svc
         envFrom:
         - configMapRef:
-          name: appconfig
+            name: appconfig
         volumeMounts:
         - name: secrets-store03-inline
           mountPath: "/mnt/secrets-store"
