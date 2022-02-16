@@ -33,13 +33,41 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sulmoon-svc
+  name: sulmoon-user-svc
   labels:
-    app: sulmoon
+    app: sulmoon-user
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: sulmoon
+    app: sulmoon-user
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sulmoon-auth-svc
+  labels:
+    app: sulmoon-auth
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: sulmoon-auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sulmoon-survey-svc
+  labels:
+    app: sulmoon-survey
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: sulmoon-survey
