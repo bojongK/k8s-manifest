@@ -37,9 +37,5 @@ metadata:
   labels: 
     app: sulmoon
 spec:
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
   selector:
     app: sulmoon
