@@ -23,7 +23,7 @@ metadata:
 spec:
   clusterIP: 10.100.75.235
   ports:
-  - port: 8761
+  - port: 80
     protocol: TCP
     targetPort: 8761
   type: LoadBalancer
