@@ -5,7 +5,7 @@ metadata:
   name: sulmoon-auth
 spec:
   serviceName: sulmoon-auth-svc
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sulmoon-auth
@@ -39,7 +39,7 @@ metadata:
   name: sulmoon-survey
 spec:
   serviceName: sulmoon-survey-svc
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sulmoon-survey
@@ -73,7 +73,7 @@ metadata:
   name: sulmoon-user
 spec:
   serviceName: sulmoon-user-svc
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sulmoon-user
