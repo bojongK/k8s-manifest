@@ -5,7 +5,7 @@ metadata:
   name: sulmoon-api-gateway
 spec:
   serviceName: sulmoon-gateway-svc
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sulmoon-gate
@@ -28,7 +28,7 @@ metadata:
   name: sulmoon-discovery
 spec:
   serviceName: sulmoon-discovery-svc
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sulmoon-dis
