@@ -26,5 +26,6 @@ spec:
   - port: 8761
     protocol: TCP
     targetPort: 8761
+  type: LoadBalancer
   selector:
     app: sulmoon-dis
