@@ -19,7 +19,7 @@ spec:
         ports:
         - containerPort: 10000
       nodeSelector:
-        node: svc
+        kubernetes.io/zone: ap-northeast-2a
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,4 +41,4 @@ spec:
         ports:
         - containerPort: 8761
       nodeSelector:
-        node: svc
+        kubernetes.io/zone: ap-northeast-2a
