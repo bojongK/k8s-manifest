@@ -22,7 +22,7 @@ spec:
         topology.kubernetes.io/zone: ap-northeast-2a
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: sulmoon-discovery
 spec:
