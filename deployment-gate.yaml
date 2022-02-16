@@ -4,7 +4,7 @@ kind: StatefulSet
 metadata:
   name: sulmoon-api-gateway
 spec:
-  serviceName: gateway
+  serviceName: sulmoon-gateway-svc
   replicas: 1
   selector:
     matchLabels:
@@ -27,7 +27,7 @@ kind: StatefulSet
 metadata:
   name: sulmoon-discovery
 spec:
-  serviceName: discovery
+  serviceName: sulmoon-discovery-svc
   replicas: 1
   selector:
     matchLabels:
