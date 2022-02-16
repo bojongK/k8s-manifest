@@ -15,7 +15,7 @@ spec:
         app: sulmoon-gate
     spec:
       containers:
-      - image: sulmoon/api-gateway-svc:189
+      - image: sulmoon/api-gateway-svc:190
         name: api-gateway
         ports:
         - containerPort: 10000
@@ -38,7 +38,7 @@ spec:
         app: sulmoon-dis
     spec:
       containers:
-      - image: sulmoon/discovery-svc:189
+      - image: sulmoon/discovery-svc:190
         name: discovery-svc
         ports:
         - containerPort: 8761
