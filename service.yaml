@@ -7,7 +7,7 @@ metadata:
 spec:
   clusterIP: 10.100.75.225
   ports:
-  - port: 10000
+  - port: 80
     protocol: TCP
     targetPort: 10000
   type: LoadBalancer
