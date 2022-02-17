@@ -15,7 +15,7 @@ spec:
         app: sulmoon-auth
     spec:
       containers:
-      - image: sulmoon/auth-svc:1
+      - image: sulmoon/auth-svc:2
         name: auth-svc
         envFrom:
         - configMapRef:
@@ -49,7 +49,7 @@ spec:
         app: sulmoon-survey
     spec:
       containers:
-      - image: sulmoon/survey-svc:1
+      - image: sulmoon/survey-svc:2
         name: survey-svc
         envFrom:
         - configMapRef:
@@ -83,7 +83,7 @@ spec:
         app: sulmoon-user
     spec:
       containers:
-      - image: sulmoon/user-svc:1
+      - image: sulmoon/user-svc:2
         name: user-svc
         envFrom:
         - configMapRef:
