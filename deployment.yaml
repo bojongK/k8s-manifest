@@ -39,7 +39,7 @@ metadata:
   name: sulmoon-survey
 spec:
   serviceName: sulmoon-survey-svc
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: sulmoon-survey
